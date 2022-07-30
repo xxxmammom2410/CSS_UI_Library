@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>UI Library</title>
+</head>
+<body>
+  
+<!-- Rating -->
+<details>
+  <summary>レート表示</summary>
+  
+
+
+<span class="rate-star" style="--rate:89%;"></span>
+
+
+<pre><code>
+  &lt;span  style=&quot;--rate:89%;&quot;&gt;&lt;&#x2f;span&gt;
+
+
+
+  .rate-star {
+    font-size: larger;
+    color: transparent;
+    background-image: linear-gradient(#ffcc33, #ffcc33), linear-gradient(#cccccc, #cccccc);
+    background-position: left, right;
+    background-repeat: no-repeat;
+    background-size: var(--rate) 100%, calc(100% - var(--rate)) 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+  }
+  
+  .rate-star:before{
+    content: "★★★★★";
+  }
+  
+  code{
+    color: white;
+    background-color: black;
+  }
+  
+  code:before{
+    content:"HTML";
+  }
+</code></pre>
+
+</details>
+</body>
+</html>
