@@ -1,0 +1,68 @@
+/* アイコンなどを配置する場合はラッパー内に配置 */
+.theme-switch-wrapper {
+  display: flex;
+  align-items: center;
+  z-index: 100;
+  /* position: fixed; */
+  /* right: 25px;
+  top: 30px; */
+}
+
+.theme-switch {
+  display: inline-block;
+  height: 34px;
+  position: relative;
+  width: 60px;
+}
+
+/* デフォルトの入力UIを非表示 */
+.theme-switch input {
+  display: none;
+}
+
+/* スライダー背景 */
+.slider {
+  background: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 0.4s;
+}
+
+/* スライダーノブを生成 */
+.slider::before {
+  background: #fff;
+  bottom: 4px;
+  content: "";
+  height: 26px;
+  left: 4px;
+  position: absolute;
+  transition: 0.4s;
+  width: 26px;
+}
+
+/* ✓状態のスライダースタイル */
+/* input要素の直後のデザイン用要素をスタイル指定 */
+input:checked + .slider {
+  /* background: var(--primary-color); */
+  background: rebeccapurple;
+}
+
+/* ✓状態のスライダーノブのスタイル */
+input:checked + .slider::before {
+  transform: translateX(26px);
+}
+
+/* スライダー背景を角丸に */
+.slider.round {
+  border-radius: 34px;
+}
+
+/* 生成したスライダーノブのスタイル */
+.slider.round::before {
+  border-radius: 50%;
+}
+
